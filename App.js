@@ -144,7 +144,7 @@ export default class App extends Component {
            const location = this.locateDevice() ?? {}; // locate the nearest device before storing his id
           
            console.log(device.id, distance, '--------Device------');
-          this.devices.push({deviceId: device.id, location}); // add to list of devices
+          this.devices.push({date: new Date(), deviceId: device.id, location}); // add to list of devices
           this.storeData(this.devices);
         }
         // this.manager.stopDeviceScan();
