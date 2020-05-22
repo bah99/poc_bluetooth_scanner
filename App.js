@@ -171,9 +171,8 @@ export default class App extends Component {
 
 
   componentDidMount = async () => {
-    this.getData();
-    //request location & backgroundLocation
-    const locationPermission = requestLocationPermission();
+    this.getData(); // load saved devices from storage
+    const locationPermission = requestLocationPermission(); //request location & backgroundLocation
 
     if (Platform.OS === 'ios') {
       this.manager.onStateChange((state) => {
@@ -202,11 +201,7 @@ export default class App extends Component {
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
 
-            {global.HermesInternal == null ? null : (
-              <View style={styles.engine}>
-                <Text style={styles.footer}>Engine: Hermes</Text>
-              </View>
-            )}
+            
 
           </ScrollView>
         </SafeAreaView>
